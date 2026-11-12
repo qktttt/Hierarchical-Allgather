@@ -1,0 +1,29 @@
+date: 2026-11-05T09:36:04+00:00
+jobid: 9042245.aurora-pbs-0001.hostmgmt.cm.aurora.alcf.anl.gov
+queue: capacity
+allocated nodes: 16
+node list: 16
+bench args: counts=65536,131072,262144 radices=102
+--- binary links:
+	libmpi.so.12 => /opt/aurora/26.181.0/spack/unified/1.1.1/install/linux-x86_64/mpich-5.0.0.aurora_test.87e2045-frxgreu/lib/libmpi.so.12 (0x000014febf23a000)
+	libfabric.so.1 => /opt/cray/libfabric/2.3.1/lib64/libfabric.so.1 (0x000014febe84c000)
+	libxpmem.so.0 => /usr/lib64/libxpmem.so.0 (0x000014febe2d9000)
+--- racks:
+     16 x4300
+--- nodes:
+x4300c1s4b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c1s6b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c2s2b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c2s3b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c4s0b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c5s0b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c5s1b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c5s6b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c5s7b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c6s0b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c6s1b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c6s2b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c6s3b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c6s4b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c6s5b0n0.hsn.cm.aurora.alcf.anl.gov
+x4300c0s5b0n0.hsn.cm.aurora.alcf.anl.gov

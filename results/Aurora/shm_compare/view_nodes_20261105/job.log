@@ -1,0 +1,6 @@
+=== start n64_ppn102_9042156_set0 on nodes 0 to 63
+=== start n32_ppn102_9042156_set1 on nodes 64 to 95
+=== start n16_ppn102_9042156_set2 on nodes 96 to 111
+=== n64_ppn102_9042156_set0 exit code: 0 elapsed_sec: 691
+=== n32_ppn102_9042156_set1 exit code: 0 elapsed_sec: 691
+=== n16_ppn102_9042156_set2 exit code: 0 elapsed_sec: 691

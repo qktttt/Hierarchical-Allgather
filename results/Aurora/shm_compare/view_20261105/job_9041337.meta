@@ -1,0 +1,21 @@
+date: 2026-11-05T06:20:30+00:00
+jobid: 9041337.aurora-pbs-0001.hostmgmt.cm.aurora.alcf.anl.gov
+queue: capacity
+allocated nodes: 8
+node list: 8
+bench args: 
+--- binary links:
+	libmpi.so.12 => /opt/aurora/26.181.0/spack/unified/1.1.1/install/linux-x86_64/mpich-5.0.0.aurora_test.87e2045-frxgreu/lib/libmpi.so.12 (0x000014b3d2145000)
+	libfabric.so.1 => /opt/cray/libfabric/2.3.1/lib64/libfabric.so.1 (0x000014b3d1757000)
+	libxpmem.so.0 => /usr/lib64/libxpmem.so.0 (0x000014b3d11e4000)
+--- racks:
+      8 x4219
+--- nodes:
+x4219c0s1b0n0.hsn.cm.aurora.alcf.anl.gov
+x4219c0s2b0n0.hsn.cm.aurora.alcf.anl.gov
+x4219c0s3b0n0.hsn.cm.aurora.alcf.anl.gov
+x4219c0s4b0n0.hsn.cm.aurora.alcf.anl.gov
+x4219c0s5b0n0.hsn.cm.aurora.alcf.anl.gov
+x4219c0s6b0n0.hsn.cm.aurora.alcf.anl.gov
+x4219c0s7b0n0.hsn.cm.aurora.alcf.anl.gov
+x4219c1s2b0n0.hsn.cm.aurora.alcf.anl.gov

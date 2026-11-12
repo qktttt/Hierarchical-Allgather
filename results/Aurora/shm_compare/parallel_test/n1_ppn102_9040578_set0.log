@@ -1,0 +1,12 @@
+[0 s] count=1 mpi_allgather k=0
+[0 s] count=1 radix_batch k=2
+[0 s] count=1 radix_batch k=102
+[0 s] count=1 node_shm k=0
+[0 s] count=1024 mpi_allgather k=0
+[0 s] count=1024 radix_batch k=2
+[0 s] count=1024 radix_batch k=102
+[0 s] count=1024 node_shm k=0
+[0 s] count=32768 mpi_allgather k=0
+[0 s] count=32768 radix_batch k=2
+[1 s] count=32768 radix_batch k=102
+[1 s] count=32768 node_shm k=0

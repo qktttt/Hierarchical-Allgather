@@ -1,0 +1,12 @@
+[2 s] count=65536 mpi_allgather k=0
+[4 s] count=65536 radix_batch k=102
+[5 s] count=65536 node_shm k=0
+[6 s] count=65536 node_view k=0
+[11 s] count=131072 mpi_allgather k=0
+[16 s] count=131072 radix_batch k=102
+[17 s] count=131072 node_shm k=0
+[19 s] count=131072 node_view k=0
+[29 s] count=262144 mpi_allgather k=0
+[38 s] count=262144 radix_batch k=102
+[42 s] count=262144 node_shm k=0
+[44 s] count=262144 node_view k=0

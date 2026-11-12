@@ -1,0 +1,1 @@
+counts=1,64,1024,8192,32768 radices=2,8,64 reps=10 warmup=3 diag=1

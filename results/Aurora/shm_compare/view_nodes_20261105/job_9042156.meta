@@ -1,0 +1,49 @@
+date: 2026-11-05T11:37:24+00:00
+jobid: 9042156.aurora-pbs-0001.hostmgmt.cm.aurora.alcf.anl.gov
+queue: small
+allocated nodes: 256
+node sets: 64 32 16
+ppn: 102
+bench args: view=1 read_pass=1
+--- binary links:
+	libmpi.so.12 => /opt/aurora/26.181.0/spack/unified/1.1.1/install/linux-x86_64/mpich-5.0.0.aurora_test.87e2045-frxgreu/lib/libmpi.so.12 (0x0000153d61275000)
+	libfabric.so.1 => /opt/cray/libfabric/2.3.1/lib64/libfabric.so.1 (0x0000153d60887000)
+	libxpmem.so.0 => /usr/lib64/libxpmem.so.0 (0x0000153d60314000)
+--- mpich version:
+MPICH Version:      5.1.0a1
+MPICH Release date: unreleased development copy
+MPICH ABI:          17:0:5
+MPICH Device:       ch4:ofi
+MPICH configure:    --prefix=/opt/aurora/26.181.0/spack/unified/1.1.1/install/linux-x86_64/mpich-5.0.0.aurora_test.87e2045-frxgreu --disable-maintainer-mode --disable-silent-rules --enable-shared --enable-static --with-pm=no --enable-romio --without-ibverbs --enable-wrapper-rpath=yes --with-yaksa=embedded --with-ze --with-ch4-shmmods=posix,gpudirect --with-hwloc=/opt/aurora/26.181.0/spack/unified/1.1.1/install/linux-x86_64/hwloc-2.12.2-y56qdyp --enable-fortran --with-slurm=no --with-pmi=pmix --with-pmix=/usr --without-cuda --without-hip --with-device=ch4:ofi --with-libfabric=/opt/cray/libfabric/2.3.1 --enable-libxml2 --with-datatype-engine=yaksa --with-xpmem=/usr --with-file-system=daos+lustre+nfs+ufs --with-daos=/usr --enable-timer-type=linux86_cycle --enable-fast=O3,alwaysinline,avx,avx2,avx512f,sse2 --enable-g=no --disable-debuginfo --enable-error-checking=runtime --without-valgrind --enable-ch4-mt=runtime --with-ze=/usr --enable-ze-native=pvc --disable-opencl CC=icx CXX=icpx FC=ifx F77=ifx
+--- modules:
+
+Currently Loaded Modules:
+  1) gcc/14.3.0                            4) libfabric/2.3.1
+  2) oneapi/release/2026.1.0               5) cray-pals/1.8.0
+  3) mpich/prd/5.0.0.aurora_test.87e2045   6) cray-libpals/1.8.0
+
+ 
+
+--- env:
+FI_CXI_DEFAULT_CQ_SIZE=131072
+FI_CXI_DEFAULT_TX_SIZE=1024
+FI_CXI_OFLOW_BUF_COUNT=3
+FI_CXI_OFLOW_BUF_SIZE=12582912
+FI_CXI_RDZV_EAGER_SIZE=2048
+FI_CXI_RDZV_THRESHOLD=16384
+FI_CXI_REQ_BUF_MAX_CACHED=0
+FI_CXI_REQ_BUF_MIN_POSTED=6
+FI_CXI_REQ_BUF_SIZE=12582912
+FI_CXI_RX_MATCH_MODE=hardware
+FI_MR_CACHE_MAX_COUNT=524288
+FI_MR_CACHE_MAX_SIZE=-1
+FI_PROVIDER=cxi,tcp;ofi_rxm
+MPICH_ROOT=/opt/aurora/26.181.0/spack/unified/1.1.1/install/linux-x86_64/mpich-5.0.0.aurora_test.87e2045-frxgreu
+MPIR_CVAR_CH4_OFI_EAGER_THRESHOLD=1000000
+MPIR_CVAR_CH4_OFI_MAX_NICS=1
+MPIR_CVAR_CH4_SHM_POSIX_TOPO_ENABLE=1
+MPIR_CVAR_ERROR_CHECKING=1
+MPIR_CVAR_INIT_SKIP_PMI_BARRIER=0
+MPIR_CVAR_PROGRESS_TIMEOUT=600
+PALS_PMI=pmix
+PALS_TRANSFER=0
