@@ -94,17 +94,38 @@ with open("total_time_best.csv", "w", newline="") as stream:
                         view_over_mpi=r["view"] / r["mpi"],
                         fastest=min(("mpi", "bruck", "shm", "view"), key=lambda a: r[a])))
 
+def result_size(b):
+    """Whole result per process, in decimal units like the README."""
+    if b < 1e6:
+        return "%.1f kB" % (b / 1e3)
+    return "%.2f MB" % (b / 1e6)
+
+
+TABLE_ALGORITHMS = ("mpi", "bruck", "view")
 with open("total_time_tables.md", "w") as out:
-    out.write("# 总耗时表\n\n总耗时 = 一次调用 + 所有进程把整份结果读一遍，每次重复相加后取中位数。"
-              "每个大小下 Bruck 取总耗时最短的基数；256 KB 及以上只跑了基数 102。加粗表示四种算法中最快。\n"
-              "† 表示这个 Bruck 数据的调用耗时比 compare_big_20261104 慢 20% 以上，不要直接用。\n")
+    out.write(
+        "# Total time of MPI_Allgather, Allgather_radix_batch and Allgather_shm_view\n\n"
+        "Aurora, 102 processes per node. Total time is one call plus one read of the whole result by every "
+        "process; each value is the median over the repetitions of that sum. MPI_Allgather runs with the "
+        "system's default settings. Allgather_radix_batch shows the radix with the lowest total time for "
+        "each message size. Message sizes of 256 KB and more were run on 1 to 16 nodes only, and with "
+        "radix 102 only.\n\n"
+        "- **Whole result**: nodes × 102 × message size, the data every process receives.\n"
+        "- **Bold**: the fastest of the three.\n"
+        "- **Ratios**: below 1 means Allgather_shm_view is faster.\n"
+        "- **†**: the Allgather_radix_batch call time is at least 20% higher than in compare_big_20261104 "
+        "for the same size. In this 64-node run a few processes were slow in stage 3 of "
+        "Allgather_radix_batch while the average stayed the same; the cause is unknown, so do not use "
+        "these values as they are.\n")
     for n in sorted(VIEW_RUNS):
-        out.write("\n## %d 节点\n\n| 消息 | 整份结果 | MPI_Allgather | Bruck 最优 | 旧版 | 新版 | 新版/旧版 | 新版/Bruck | 新版/MPI |\n"
-                  "|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n" % n)
+        out.write("\n## %d node%s\n\n"
+                  "| Message per process | Whole result | MPI_Allgather | Allgather_radix_batch (best k) "
+                  "| Allgather_shm_view | view / radix_batch | view / MPI |\n"
+                  "|---:|---:|---:|---:|---:|---:|---:|\n" % (n, "" if n == 1 else "s"))
         for r in (x for x in best if x["nodes"] == n):
-            win = min(("mpi", "bruck", "shm", "view"), key=lambda a: r[a])
+            win = min(TABLE_ALGORITHMS, key=lambda a: r[a])
             cell = lambda a: ("**%s**" % fmt(r[a])) if a == win else fmt(r[a])
             mark = " †" if r["bruck_vs_earlier_run"] and r["bruck_vs_earlier_run"] >= 1.2 else ""
-            out.write("| %s | %.2f MB | %s | %s (k=%d)%s | %s | %s | %.2f | %.2f | %.2f |\n" % (
-                size_name(r["bytes"]), r["result_bytes"] / 1e6, cell("mpi"), cell("bruck"), r["bruck_k"], mark,
-                cell("shm"), cell("view"), r["view"] / r["shm"], r["view"] / r["bruck"], r["view"] / r["mpi"]))
+            out.write("| %s | %s | %s | %s (k=%d)%s | %s | %.2f | %.2f |\n" % (
+                size_name(r["bytes"]), result_size(r["result_bytes"]), cell("mpi"), cell("bruck"),
+                r["bruck_k"], mark, cell("view"), r["view"] / r["bruck"], r["view"] / r["mpi"]))

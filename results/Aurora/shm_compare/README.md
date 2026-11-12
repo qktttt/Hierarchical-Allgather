@@ -61,7 +61,8 @@ CSV 各列的含义：
 `combined/` 里是按中位数汇总的结果：
 
 - `all_runs_medians.csv`：五批主要测试的全部中位数，包含每个基数。
-- `total_time_best.csv`、`total_time_tables.md`：四种算法的总耗时（调用加读取）和比值。
+- `total_time_best.csv`：四种算法的总耗时（调用加读取）、调用耗时和比值。
+- `total_time_tables.md`：其中 `MPI_Allgather`、`Allgather_radix_batch` 和 `Allgather_shm_view` 三种的总耗时表（英文）。
 - `make_combined.py`：重新生成以上文件，在 `combined/` 目录里运行 `python3 make_combined.py`。
 
 总耗时表的来源：1 到 16 节点用 `view_20261105`，32、64 节点用 `view_nodes_20261105`，256 KB 及以上用 `view_largemsg_20261105`。
